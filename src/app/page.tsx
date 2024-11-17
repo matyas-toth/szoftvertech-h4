@@ -12,6 +12,7 @@ export default function Home() {
 
   const history = [
     { date: "2024. 11. 13.", version: "1.0", description: "Kezdeti verzió, az oldal összeállítása", author: "Vay Dominika" },
+    { date: "2024. 11. 15.", version: "1.1", description: "Egyes alpontok kitöltése, formázása", author: "Vay Dominika" },
   ];
 
   const tableOfContents = [
@@ -513,6 +514,104 @@ számosságúra módosítottuk, hiszen több felhasználó is szerepelhet a topl
 
         <h2 id="bazisosztalyokkeresese" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.1.3. Bázisosztályok keresése</h2>
 
+        <p className="pl-[5.3rem] pt-6">
+        A bázisosztályok keresése során az a cél, hogy az osztályok közötti hasonlóságokat azonosítsuk, és ha több osztályban is ismétlődnek bizonyos attribútumok, viselkedés, vagy más jellemzők, akkor azokat egy közös bázisosztályba emeljük. Az osztályok közötti ismétlődő elemek általánosítása lehetővé teszi, hogy az osztálydiagram tisztább, egyszerűbb és karbantarthatóbb legyen, miközben a redundanciát csökkenti.
+        </p>
+
+        <ol className="pl-[5.3rem] pt-6 list-decimal list-inside">
+
+          <li className="font-bold">Felhasználó és Készítő, Értékelő osztályok általánosítása:</li>
+
+          <ol className="list-disc list-inside">
+
+          <p className="pt-6 font-bold">Jelenlegi állapot:</p>
+          <p className="pl-[5.rem] pt-6">A <span className="font-bold">Felhasználó</span> osztály a következő attribútumokat tartalmazza:</p>
+
+          <li className="pl-[1rem]">id (string)</li>
+          <li className="pl-[1rem]">név (string)</li>
+          <li className="pl-[1rem]">email (string)</li>
+          <li className="pl-[1rem]">regisztráció_dátuma (date)</li>
+          <li className="pl-[1rem]">szerep (string)</li>
+
+          </ol>
+
+          <p className="pt-6">Ezen kívül külön Készítő és Értékelő osztályok is léteznek, amelyek szintén tartalmazzák a Felhasználó osztályban szereplő alapvető attribútumokat (pl. id, név, email), és különböző egyedi metódusokat.</p>
+
+          <p className="pl-[5.3.rem] pt-6 font-bold">Megegyezések és meggondolások:</p>
+          <p className="pt-6">A <span className="font-bold">Készítő</span> és <span className="font-bold">Értékelő</span> osztályok hasonló adatokat tartalmaznak, mint a <span className="font-bold">Felhasználó</span> osztály. Tehát, ahelyett, hogy külön osztályokat definiálnánk, ezek az osztályok örökölhetik a Felhasználó osztályt, és csak azokat az egyedi tulajdonságokat vagy metódusokat tartalmazzák, amelyek a Készítő vagy Értékelő szerephez szükségesek.</p>
+
+          <ol className="list-disc list-inside">
+
+            <p className="font-bold pt-6">Bázisosztály és változtatások:</p>
+
+            <li className="pl-[1rem]">A Felhasználó osztály bázisosztály lesz.</li>
+            <li className="pl-[1rem]">A Készítő és Értékelő osztályok Felhasználó osztályból fognak örökölni, így csak a szükséges egyedi attribútumokat vagy metódusokat kell definiálni a két alosztályban.</li>
+            <li className="pl-[1rem]">Az osztálydiagramon az Felhasználó osztály az őt öröklő osztályok (pl. Készítő, Értékelő) felé nyíló öröklődési kapcsolatot kap.</li>
+
+          </ol>
+
+
+        </ol>
+
+        <ol className="pl-[5.3rem] pt-6 list-decimal list-inside">
+
+          <li className="font-bold">Kurzus és Anyag osztályok általánosítása:</li>
+
+          <ol className="list-disc list-inside">
+
+          <p className="pt-6 font-bold">Jelenlegi állapot:</p>
+          <p className="pl-[5.rem] pt-6">A <span className="font-bold">Kurzus</span> osztály a következő attribútumokat tartalmazza:</p>
+
+          <li className="pl-[1rem]">id (string)</li>
+          <li className="pl-[1rem]">név (string)</li>
+          <li className="pl-[1rem]">leírás (string)</li>
+          <li className="pl-[1rem]">kategória (string)</li>
+
+          </ol>
+
+          <p className="pt-6">Ezen kívül külön Anyag osztály is létezik, amely hasonló alapvető információkat tartalmaz, például id, típus, leírás.</p>
+
+          <p className="pl-[5.3.rem] pt-6 font-bold">Megegyezések és meggondolások:</p>
+          <p className="pt-6">A <span className="font-bold">Kurzus</span> és <span className="font-bold">Anyag</span> osztályok számos közös attribútummal rendelkeznek, mint például a név, leírás és id. Érdemes lenne ezen osztályok közötti ismétlődéseket egy bázisosztályba emelni.</p>
+
+          <ol className="list-disc list-inside">
+
+            <p className="font-bold pt-6">Bázisosztály és változtatások:</p>
+
+            <li className="pl-[1rem]">A Tárgy vagy Elem osztály lehetne a közös bázisosztály, amely tartalmazza az id, név, leírás attribútumokat.</li>
+            <li className="pl-[1rem]">A Kurzus és Anyag osztályok ebből a közös bázisosztályból örökölhetnek, csak azokat az egyedi jellemzőket tartalmazva, amelyek a Kurzus vagy Anyag osztályokhoz szükségesek.</li>
+            <li className="pl-[1rem]">Az osztálydiagramon ez a közös Tárgy vagy Elem osztály egy bázisosztályként jelenne meg, amelyet a Kurzus és Anyag osztályok örökölnek.</li>
+
+          </ol>
+
+
+        </ol>
+
+        <ol className="pl-[5.3rem] pt-6 list-decimal list-inside">
+
+          <li className="font-bold">XP és Jelvény osztályok általánosítása:</li>
+
+          <ol className="list-disc list-inside">
+
+          <p className="pt-6 font-bold">Jelenlegi állapot:</p>
+          <p className="pl-[5.rem] pt-6">Az <span className="font-bold">XP</span> és a <span className="font-bold">Jelvény</span> osztályok külön-külön szerepelnek, mindkettő rendelkezik id attribútummal, és mindkettő kapcsolódik a felhasználóhoz.</p>
+          </ol>
+
+          <p className="pl-[5.3.rem] pt-6 font-bold">Megegyezések és meggondolások:</p>
+          <p className="pt-6">Az <span className="font-bold">XP</span> és a <span className="font-bold">Jelvény</span> osztályok bizonyos szempontból hasonlóak, mivel mindkettő egy felhasználó által megszerezhető entitást reprezentál, és mindkettő rendelkezik id-val. Az XP és a Jelvény közötti kapcsolatokat érdemes lenne egy közös bázisosztályba szervezni, amely lehetővé teszi, hogy az XP és Jelvény közös jellemzőiket egy bázisosztályban helyezzük el.</p>
+
+          <ol className="list-disc list-inside">
+
+            <p className="font-bold pt-6">Bázisosztály és változtatások:</p>
+
+            <li className="pl-[1rem]">A Kiváltság vagy Elismerés osztály lehetne a közös bázisosztály, amely tartalmazza az id, név, leírás attribútumokat.</li>
+            <li className="pl-[1rem]">Az XP és Jelvény osztályok ebből az osztályból örökölhetnének, így egyszerűbbé válna a kezelésük és a rendszer bővítése.</li>
+            <li className="pl-[1rem]">Az osztálydiagramon a Kiváltság osztály a Jelvény és XP osztályok közvetlen bázisosztályaként jelenne meg.
+            </li>
+
+          </ol>
+          </ol>
+
         {
           /*
           DINAMIKUS MODELL
@@ -529,6 +628,126 @@ számosságúra módosítottuk, hiszen több felhasználó is szerepelhet a topl
 
         <h2 id="funkcionalismodell" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.3. Funkcionális modell</h2>
 
+        <p className="pl-[5.3rem] pt-6">
+        A funkcionális modell célja, hogy bemutassa a rendszer legfontosabb feldolgozási lépéseit, az egyes tevékenységek közötti adatáramlásokat és az üzleti logikát. A modell általában egy sor tevékenységből, folyamatból és azok összekapcsolásából áll, amelyeket az alábbiakban dokumentálunk.
+        </p>
+
+        <ol className="pl-[5.3rem] list-decimal list-inside">
+
+        <li className="font-bold pt-6">Felhasználói Regisztráció és Bejelentkezés</li>
+
+        <p className="font-bold pt-6">Leírás:</p>
+        <p>A felhasználói regisztráció és bejelentkezés az alapvető folyamatok közé tartozik, amely biztosítja, hogy csak a jogosult felhasználók férhessenek hozzá a rendszerhez. A regisztráció során a felhasználó adatokat ad meg (pl. név, email, jelszó), amelyek eltárolásra kerülnek az adatbázisban. A bejelentkezés során a felhasználó a már regisztrált adataival jelentkezhet be, és ha a rendszer hitelesíti őt, akkor hozzáférést biztosít az alkalmazás további funkcióihoz.</p>
+
+        <ol className="pt-6 list-disc list-inside">
+
+          <p className="font-bold">Adatáramlás:</p>
+
+          <li className="pl-[1rem]">Felhasználó adatai (név, email, jelszó) a Felhasználó osztály adatain keresztül a Felhasználói adatbázisba kerülnek.</li>
+          <li className="pl-[1rem]">A bejelentkezéskor a Felhasználó osztály adatainak összehasonlítása a Felhasználói adatbázissal történik, és ha a jelszó és email megegyezik, a rendszer autentikálja a felhasználót.</li>
+
+        </ol>
+
+        <ol className="pt-6 list-decimal list-inside">
+
+          <p className="font-bold">Diagram:</p>
+          <p className="pt-6">A regisztráció és bejelentkezés folyamata egy tevékenységdiagram formájában ábrázolható. A diagram az alábbi lépéseket tartalmazza:</p>
+
+          <li className="font-bold pl-[1rem]">Felhasználó adatai {'->'} Regisztrációs űrlap kitöltése {'->'} Adatok validálása {'->'} Adatbázisba mentés.</li>
+          <li className="font-bold pl-[1rem]">Felhasználó bejelentkezése {'->'} Bejelentkezési űrlap kitöltése {'->'} Adatok összehasonlítása az adatbázissal {'->'} Felhasználó hitelesítése.</li>
+
+        </ol>
+
+        </ol>
+
+        <ol className="pl-[5.3rem] list-decimal list-inside">
+
+        <li className="font-bold pt-6">Készítő Tartalomfeltöltése és Értékelő</li>
+
+        <p className="font-bold pt-6">Leírás:</p>
+        <p>A Készítő osztály tagjai képesek új kurzusokat vagy anyagokat feltölteni a rendszerbe, amelyeket később az Értékelő osztály tagjai értékelhetnek. A feltöltés folyamata során a Készítő megadja az anyagok adatait, például címét, leírását, illetve esetleg fájlt is csatolhat. Az anyagok feltöltése után az Értékelő véleményezi őket, és visszajelzést ad, ami alapvetően fontos az anyagok minőségének javításában.</p>
+
+        <ol className="pt-6 list-disc list-inside">
+
+          <p className="font-bold">Adatáramlás:</p>
+
+          <li className="pl-[1rem]">Téma anyagok és Téma adatainak feltöltése a Készítő által {'->'} Anyag feltöltése {'->'} Adatbázis frissítése.</li>
+          <li className="pl-[1rem]">Az Anyag hozzáférhetősége az Értékelő számára {'->'} Értékelés bejegyzése {'->'} Adatbázis frissítése.</li>
+
+        </ol>
+
+        <ol className="pt-6 list-decimal list-inside">
+
+          <p className="font-bold">Diagram:</p>
+          <p className="pt-6">A tevékenységdiagram az alábbi folyamatot mutatja:</p>
+
+          <li className="font-bold pl-[1rem]">Készítő {'->'} Anyag adatok megadása {'->'} Téma feltöltése {'->'} Anyag adatbázis frissítése.</li>
+          <li className="font-bold pl-[1rem]">Értékelő {'->'} Anyag értékelése {'->'} Értékelés rögzítése {'->'} Adatbázis frissítése.</li>
+
+        </ol>
+
+        </ol>
+
+        <ol className="pl-[5.3rem] list-decimal list-inside">
+
+<li className="font-bold pt-6">Felhasználói XP és Jelvények</li>
+
+<p className="font-bold pt-6">Leírás:</p>
+<p>A rendszerben minden felhasználó XP-t és jelvényeket szerezhet a különböző tevékenységek végrehajtása során. Az XP egyfajta pontozási rendszer, amelyet a felhasználó teljesítménye alapján állítanak össze. A jelvények pedig különböző elismeréseket adnak, például a rendszerben való aktív részvételért vagy egy-egy kihívás teljesítéséért.</p>
+
+<ol className="pt-6 list-disc list-inside">
+
+  <p className="font-bold">Adatáramlás:</p>
+
+  <li className="pl-[1rem]">XP számítása a Felhasználó tevékenységei alapján {'->'} XP frissítése a Felhasználó adatbázisában.</li>
+  <li className="pl-[1rem]">Jelvények hozzáadása a Felhasználó elért eredményei alapján {'->'} Jelvények rögzítése a Felhasználó adatbázisában.</li>
+
+</ol>
+
+<ol className="pt-6 list-decimal list-inside">
+
+  <p className="font-bold">Diagram:</p>
+  <p className="pt-6">Ez a folyamat a következő lépéseket tartalmazza:</p>
+
+  <li className="font-bold pl-[1rem]">Felhasználó aktivitása {'->'} XP számítása {'->'} Adatbázis frissítése.</li>
+  <li className="font-bold pl-[1rem]">Felhasználó eredményei {'->'} Jelvény hozzáadása {'->'} Adatbázis frissítése.</li>
+
+</ol>
+
+</ol>
+
+
+<ol className="pl-[5.3rem] list-decimal list-inside">
+
+<li className="font-bold pt-6">Ranglista és Értékelések</li>
+
+<p className="font-bold pt-6">Leírás:</p>
+<p>A ranglista a felhasználók XP-jét rangsorolja, és megjeleníti a legaktívabb felhasználókat. Az értékelések segítenek nyomon követni, hogy egy-egy anyag mennyire sikeres a felhasználók körében, és ez befolyásolhatja a rangsorokat is. A ranglisták és az értékelések folyamatosan frissülnek a felhasználói aktivitás alapján.</p>
+
+<ol className="pt-6 list-disc list-inside">
+
+  <p className="font-bold">Adatáramlás:</p>
+
+  <li className="pl-[1rem]">Felhasználói XP adatok {'->'} Ranglista frissítése {'->'} Adatbázis frissítése.</li>
+  <li className="pl-[1rem]">Értékelések bejegyzése {'->'} Anyag értékelése {'->'} Értékelés mentése az adatbázisba.</li>
+
+</ol>
+
+<ol className="pt-6 list-decimal list-inside">
+
+  <p className="font-bold">Diagram:</p>
+  <p className="pt-6">A ranglista és értékelések folyamata:</p>
+
+  <li className="font-bold pl-[1rem]">Felhasználói aktivitás {'->'} XP számítása {'->'} Ranglista frissítése {'->'} Adatbázis frissítése.</li>
+  <li className="font-bold pl-[1rem]">Anyag értékelés {'->'} Értékelés bejegyzése {'->'} Adatbázis frissítése.
+  </li>
+
+</ol>
+
+</ol>
+
+
+
         {
           /*
           OPERÁCIÓK AZONOSÍTÁSA
@@ -536,6 +755,98 @@ számosságúra módosítottuk, hiszen több felhasználó is szerepelhet a topl
         }
 
         <h2 id="operaciokazonositasa" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.4. Operációk azonosítása</h2>
+
+        <p className="pl-[5.3rem] pt-6">Az operációk azonosítása során az osztálydiagramot kiegészítjük az egyes osztályokhoz tartozó műveletekkel (operációkkal), amelyek meghatározzák, hogy az osztályok hogyan reagálnak a felhasználói interakciókra, valamint hogyan kezelik az adatokat és végrehajtják a rendszer logikai folyamatait. A dinamikus és funkcionális modellek alapján az osztályokhoz rendelt operációk segítenek a rendszer működésének pontosabb modellezésében és az osztályok közötti kapcsolat részletesebb leírásában.</p>
+
+        <ol className="pl-[5.3rem] pt-6 list-decimal list-inside">
+
+        <li className="font-bold">Felhasználó osztály operációi:</li>
+
+        <ol className="pt-6 list-disc list-inside">
+
+          <p>A <span className="font-bold">Felhasználó</span> osztály az alapvető interakciókat képviseli, mint például a regisztráció, bejelentkezés, profil módosítása, és XP gyűjtése. Az alábbi operációk szükségesek:</p>
+
+          <li className="pl-[1rem]"><span className="font-bold">regisztráció(adatok):</span> A felhasználó adatainak (pl. név, email, jelszó) rögzítése és tárolása az adatbázisban.</li>
+          <li className="pl-[1rem]"><span className="font-bold">bejelentkezés(email, jelszó):</span> A felhasználó hitelesítése a rendszerbe való belépéshez.</li>
+          <li className="pl-[1rem]"><span className="font-bold">profilMódosítása(adatok):</span> A felhasználói profil módosítása (pl. jelszó, email, egyéb személyes információk).</li>
+          <li className="pl-[1rem]"><span className="font-bold">xpSzámítás(tevékenységek):</span> A felhasználó XP-jének frissítése a végrehajtott tevékenységek alapján.</li>
+          <li className="pl-[1rem]"><span className="font-bold">jelvényHozzáadása(jelvények):</span> Az új jelvények hozzáadása a felhasználó profiljához.</li>
+
+          <p className="font-bold pt-6">Döntések és Meggondolások:</p>
+
+          <li className="pl-[1rem]">A <span className="font-bold">felhasználó adatainak</span> kezelése és a hitelesítési folyamat biztonsági megfontolások alapján kerültek meghatározásra.</li>
+          <li className="pl-[1rem]">Az XP és jelvények operációi az <span className="font-bold">interakciók</span> alapján kerültek beemelésre a rendszerbe, és szorosan kapcsolódnak a felhasználó aktivitásához.</li>
+
+      </ol>
+
+      <li className="font-bold pt-6">Készítő osztály operációi</li>
+
+      <ol className="pt-6 list-disc list-inside">
+
+          <p>A <span className="font-bold">Készítő</span> osztály fő feladata a tartalom feltöltése, kezelése és annak értékelése. Az alábbi operációk szükségesek:</p>
+
+          <li className="pl-[1rem]"><span className="font-bold">anyagFeltöltése(téma, fájl): </span> Az anyagok feltöltése a rendszerbe (pl. kurzusok, dokumentumok, fájlok).</li>
+          <li className="pl-[1rem]"><span className="font-bold">anyagMódosítása(téma, fájl):</span> A feltöltött anyagok módosítása vagy frissítése.</li>
+          <li className="pl-[1rem]"><span className="font-bold">anyagEltávolítása(téma):</span> A feltöltött anyag eltávolítása a rendszerből.</li>
+          <li className="pl-[1rem]"><span className="font-bold">értékelésKérés(értékelő):</span> A feltöltött anyagok értékelése kérésének kezdeményezése.</li>
+
+          <p className="font-bold pt-6">Döntések és Meggondolások:</p>
+
+          <li className="pl-[1rem]">A <span className="font-bold">Készítő </span> operációi szoros kapcsolatban állnak az anyagok kezelésével. A módosítások és eltávolítások operációk figyelembe veszik az anyagok verziókezelését és biztonságos tárolását.</li>
+          <li className="pl-[1rem]">Az <span className="font-bold">értékelés kérése</span> operáció lehetőséget ad arra, hogy az anyagok minősége folyamatosan javuljon a felhasználók visszajelzései alapján.
+          </li>
+
+      </ol>
+
+      <li className="font-bold pt-6">Értékelő osztály operációi</li>
+
+      <ol className="pt-6 list-disc list-inside">
+
+          <p>Az <span className="font-bold">Értékelő</span> osztály az anyagok minőségét és hasznosságát értékeli, így az alábbi operációkra van szükség:</p>
+
+          <li className="pl-[1rem]"><span className="font-bold">értékelésAdása(anyag, értékelés):</span> A feltöltött anyagok értékelése egy adott skálán.</li>
+          <li className="pl-[1rem]"><span className="font-bold">kommentálás(anyag, komment)</span> A felhasználók visszajelzésének rögzítése a feltöltött anyagokkal kapcsolatban.</li>
+
+          <p className="font-bold pt-6">Döntések és Meggondolások:</p>
+
+          <li className="pl-[1rem]">Az <span className="font-bold">értékelés és kommentálás</span> operációk biztosítják a felhasználói visszajelzéseket és segítik a tartalom minősítését.</li>
+          <li className="pl-[1rem]">A kommentek rögzítése az <span className="font-bold">anyagról</span> való véleményezés és az interakciók dokumentálásának fontos eleme, és segíti a transzparenciát az anyagok minősítésében.
+          </li>
+
+      </ol>
+
+      <li className="font-bold pt-6">Ranglista osztály operációi</li>
+
+      <ol className="pt-6 list-disc list-inside">
+
+          <p>A <span className="font-bold">Ranglista</span> osztály a felhasználók teljesítményét követi, és ennek alapján rangsort alkot. Az operációk a következők:</p>
+
+          <li className="pl-[1rem]"><span className="font-bold">rangListaFrissítés():</span> A ranglista automatikus frissítése, amely figyelembe veszi az összes felhasználó XP-jét.</li>
+          <li className="pl-[1rem]"><span className="font-bold">rangListaFrissítés():</span> A legjobb felhasználó kiválasztása az XP alapján.</li>
+
+          <p className="font-bold pt-6">Döntések és Meggondolások:</p>
+
+          <li className="pl-[1rem]">A ranglista frissítésének operációja minden új aktivitás során automatikusan frissíti a rangsort.</li>
+          <li className="pl-[1rem]">Az <span className="font-bold">aktivitás</span> alapján történő rangsorolás a felhasználói interakciók és eredmények összegzésére épül.
+          </li>
+
+      </ol>
+
+      <li className="font-bold pt-6">Jelvények osztály operációi</li>
+
+      <ol className="pt-6 list-disc list-inside">
+
+          <p>A <span className="font-bold">Jelvények</span> osztály az elért eredmények és kitüntetések nyilvántartásáért felelős. Az operációk:</p>
+
+          <li className="pl-[1rem]"><span className="font-bold">jelvényHozzáadása(felhasználó, jelvény):</span> Új jelvények hozzárendelése a felhasználókhoz az elért eredmények alapján.</li>
+
+          <p className="font-bold pt-6">Döntések és Meggondolások:</p>
+
+          <li className="pl-[1rem]">A jelvények adása a felhasználói eredmények alapján történik, így az operációk a motiváció növelésére és a felhasználói elismerésre összpontosítanak.</li>
+
+      </ol>
+
+      </ol>
 
         {
           /*
