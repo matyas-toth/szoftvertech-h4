@@ -15,6 +15,7 @@ export default function Home() {
     { date: "2024. 11. 13.", version: "1.0", description: "Kezdeti verzió, az oldal összeállítása", author: "Vay Dominika" },
     { date: "2024. 11. 15.", version: "1.1", description: "Egyes alpontok kitöltése, formázása", author: "Vay Dominika" },
     { date: "2024. 11. 16.", version: "1.2", description: "Modellek megrajzolása és beillesztése", author: "Ardon Milán, Tóth Mátyás, Vay Dominika" },
+    { date: "2024. 11. 18.", version: "2.0", description: "Egyes alpontok átbeszélése, oldal megformázása és az esetleges hibák javítása", author: "Ardon Milán, Tóth Mátyás, Vay Dominika, Kovács Attila Marcell, Gombkötő Ábel Marcell" },
   ];
 
   const tableOfContents = [
