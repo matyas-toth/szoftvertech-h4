@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
   const history = [
     { date: "2024. 11. 13.", version: "1.0", description: "Kezdeti verzió, az oldal összeállítása", author: "Vay Dominika" },
     { date: "2024. 11. 15.", version: "1.1", description: "Egyes alpontok kitöltése, formázása", author: "Vay Dominika" },
+    { date: "2024. 11. 16.", version: "1.2", description: "Modellek megrajzolása és beillesztése", author: "Ardon Milán, Tóth Mátyás, Vay Dominika" },
   ];
 
   const tableOfContents = [
@@ -48,7 +50,8 @@ export default function Home() {
     { number: "3.6.4.", title: "Tananyag osztály", id: "tananyagosztaly" },
     { number: "3.6.5.", title: "Jelvény osztály", id: "jelvenyosztaly" },
     { number: "3.6.6.", title: "XP osztály", id: "xposztaly" },
-    { number: "3.6.7.", title: "Ranglista osztály", id: "ranglistaosztaly" },
+    { number: "3.6.7.", title: "Achievement osztály", id: "achiosztaly" },
+    { number: "3.6.8.", title: "Ranglista osztály", id: "ranglistaosztaly" },
   ];
 
   return (
@@ -161,6 +164,14 @@ export default function Home() {
 
         <h2 id="kezdetiosztalydiagram" className="ml-8 text-xl font-bold text-sky-600 pt-6">2. Kezdeti osztálydiagram</h2>
 
+        <Image 
+            src="/kezdetlegesosztalydiagram.png"
+            alt="Kezdetleges osztálydiagram"
+            width={800}
+          height={600} // állítsd be a kép tényleges magasságát
+          className="ml-[5.3rem] pt-6"
+          />
+
         {
           /*
           OSZTÁLYDIAGRAM
@@ -168,6 +179,14 @@ export default function Home() {
         }
 
         <h2 id="osztalydiagram" className="ml-8 text-xl font-bold text-sky-600 pt-6">2.1. Osztálydiagram</h2>
+
+        <Image 
+            src="/vegsoosztalydiagram.png"
+            alt="Osztálydiagram"
+            width={800}
+          height={600} // állítsd be a kép tényleges magasságát
+          className="ml-[5.3rem] pt-6"
+          />
 
         {
           /*
@@ -572,7 +591,7 @@ számosságúra módosítottuk, hiszen több felhasználó is szerepelhet a topl
           <p className="pt-6">Ezen kívül külön Anyag osztály is létezik, amely hasonló alapvető információkat tartalmaz, például id, típus, leírás.</p>
 
           <p className="pl-[5.3.rem] pt-6 font-bold">Megegyezések és meggondolások:</p>
-          <p className="pt-6">A <span className="font-bold">Kurzus</span> és <span className="font-bold">Anyag</span> osztályok számos közös attribútummal rendelkeznek, mint például a név, leírás és id. Érdemes lenne ezen osztályok közötti ismétlődéseket egy bázisosztályba emelni.</p>
+          <p className="pt-6">A <span className="font-bold">Kurzus</span> és <span className="font-bold">Anyag</span> osztályok számos közös attribútummal rendelkeznek, mint például a név, leírás és id. Érdemes lenne ezen osztályok közötti ismétlődéseket egy bzisosztályba emelni.</p>
 
           <ol className="list-disc list-inside">
 
@@ -620,13 +639,31 @@ számosságúra módosítottuk, hiszen több felhasználó is szerepelhet a topl
 
         <h2 id="dinamikusmodell" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.2. Dinamikus modell</h2>
 
+        <Image 
+            src="/dinamikusmodell.png"
+            alt="Dinamikus modell"
+            width={800}
+          height={600} // állítsd be a kép tényleges magasságát
+          className="ml-[5.3rem] pt-6"
+          />
+
         {
           /*
           FUNKCIONÁLIS MODELL
           */
         }
 
+        
+
         <h2 id="funkcionalismodell" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.3. Funkcionális modell</h2>
+
+          <Image 
+            src="/funkcionalismodell.png"
+            alt="Funkcionális modell"
+            width={800}
+          height={600} // állítsd be a kép tényleges magasságát
+          className="ml-[5.3rem] pt-6"
+          />
 
         <p className="pl-[5.3rem] pt-6">
         A funkcionális modell célja, hogy bemutassa a rendszer legfontosabb feldolgozási lépéseit, az egyes tevékenységek közötti adatáramlásokat és az üzleti logikát. A modell általában egy sor tevékenységből, folyamatból és azok összekapcsolásából áll, amelyeket az alábbiakban dokumentálunk.
@@ -856,6 +893,14 @@ számosságúra módosítottuk, hiszen több felhasználó is szerepelhet a topl
 
         <h2 id="analizismodellosztalydiagram" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.5. Az analízis modell osztálydiagramja</h2>
 
+        <Image 
+          src="/analizismodellosztalydiagramja.png"
+          alt="Az analízis modell osztálydiagramja"
+          width={800}
+          height={600} // állítsd be a kép tényleges magasságát
+          className="ml-[5.3rem] pt-6"
+        />
+
         {
           /*
           AZ ANALÍZIS MODELL OSZTÁLYAINAK LISTÁJA
@@ -865,13 +910,617 @@ számosságúra módosítottuk, hiszen több felhasználó is szerepelhet a topl
         <h2 id="analizismodellosztalyai" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6. Az analízis modell osztályainak listája</h2>
 
         <h2 id="felhasznaloosztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.1. Felhasználó osztály</h2>
-        <h2 id="keszitoosztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.2. Készítő osztály</h2>
-        <h2 id="ertekeloosztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.3. Értékelő osztály</h2>
-        <h2 id="tananyagosztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.4. Tananyag osztály</h2>
-        <h2 id="jelvenyosztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.5. Jelvény osztály</h2>
-        <h2 id="xposztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.6. XP osztály</h2>
-        <h2 id="ranglistaosztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.7. Ranglista osztály</h2>
 
+        <p className="pl-[5.3rem] pt-6 font-bold">Felelőssége, feladata:</p>
+        <p className="pl-[5.3rem]">A Felhasználó osztály képviseli a regisztrált felhasználókat a rendszerben, akik hozzáférhetnek a tananyagokhoz, értékelhetnek és véleményezhetnek kurzusokat, és különböző aktivitásokat végezhetnek.</p>
+
+        <ol className="pl-[5.3rem] pt-6 list-disc list-inside">
+
+          <p className="font-bold">Együttműködők:</p>
+
+          <li><span className="font-bold">Készítő:</span> A készítők által feltöltött tananyagokat érhetik el.</li>
+          <li><span className="font-bold">Jelvény:</span> Jelvényeket szerezhetnek tevékenységeik során.</li>
+          <li><span className="font-bold">XP:</span> A felhasználók XP-t gyűjthetnek a tevékenységekért.</li>
+
+        </ol>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Attribútumok:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Típus</th>
+      <th className="border border-black p-4 text-lg">Leírás</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">felhasználóId</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">A felhasználó egyedi azonosítója</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">név</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">A felhasználó teljes neve</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">email</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">A felhasználó email címe</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">jelszó</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">A felhasználó titkosított jelszava</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">regisztrációDátum</td>
+      <td className="border border-black p-4 text-lg">Date</td>
+      <td className="border border-black p-4 text-lg">A felhasználó regisztrációjának időpontja</td>
+    </tr>
+  </tbody>
+</table>
+
+<p className="pl-[5.3rem] pt-6 font-bold">Operációk:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Argumentumok</th>
+      <th className="border border-black p-4 text-lg">Működése</th>
+      <th className="border border-black p-4 text-lg">Feladata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">regisztrál()</td>
+      <td className="border border-black p-4 text-lg">név, email, jelszó</td>
+      <td className="border border-black p-4 text-lg">A felhasználó regisztrációja a rendszerbe</td>
+      <td className="border border-black p-4 text-lg">Regisztráció új felhasználó számára</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">bejelentkezik()</td>
+      <td className="border border-black p-4 text-lg">email, jelszó</td>
+      <td className="border border-black p-4 text-lg">A felhasználó bejelentkezik a rendszerbe</td>
+      <td className="border border-black p-4 text-lg">A felhasználó hitelesítése és bejelentkezése</td>
+    </tr>
+  </tbody>
+</table>
+
+        <h2 id="keszitoosztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.2. Készítő osztály</h2>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Felelőssége, feladata:</p>
+        <p className="pl-[5.3rem]">A Készítő osztály felelős a tananyagok feltöltéséért és kezeléséért. Készítők lehetnek oktatók, akik különböző kurzusokat és anyagokat töltenek fel a rendszerbe.</p>
+
+        <ol className="pl-[5.3rem] pt-6 list-disc list-inside">
+
+          <p className="font-bold">Együttműködők:</p>
+
+          <li><span className="font-bold">Felhasználó:</span> A felhasználók hozzáférhetnek a tananyagokhoz.</li>
+          <li><span className="font-bold">Tananyag:</span> A tananyagokat ők töltik fel és frissítik.</li>
+
+        </ol>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Attribútumok:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Típus</th>
+      <th className="border border-black p-4 text-lg">Leírás</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">készítőId</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">A készítő egyedi azonosítója</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">név</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">A készítő neve</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">email</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">A készítő email címe</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">regisztrációDátuma</td>
+      <td className="border border-black p-4 text-lg">Date</td>
+      <td className="border border-black p-4 text-lg">A készítő regisztrációjának időpontja</td>
+    </tr>
+  </tbody>
+</table>
+
+<p className="pl-[5.3rem] pt-6 font-bold">Operációk:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Argumentumok</th>
+      <th className="border border-black p-4 text-lg">Működése</th>
+      <th className="border border-black p-4 text-lg">Feladata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">feltölt()</td>
+      <td className="border border-black p-4 text-lg">tananyag</td>
+      <td className="border border-black p-4 text-lg">Új tananyag feltöltése a rendszerbe</td>
+      <td className="border border-black p-4 text-lg">Új tananyag hozzáadása a rendszerhez</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">frissít()</td>
+      <td className="border border-black p-4 text-lg">tananyag</td>
+      <td className="border border-black p-4 text-lg">A már feltöltött tananyag módosítása</td>
+      <td className="border border-black p-4 text-lg">A tananyagok frissítése, módosítása</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">töröl()</td>
+      <td className="border border-black p-4 text-lg">tananyag</td>
+      <td className="border border-black p-4 text-lg">A feltöltött anyag eltávolítása a rendszerből</td>
+      <td className="border border-black p-4 text-lg">A már nem szükséges tananyag törlése</td>
+    </tr>
+  </tbody>
+</table>
+
+        <h2 id="ertekeloosztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.3. Értékelő osztály</h2>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Felelőssége, feladata:</p>
+        <p className="pl-[5.3rem]">Az Értékelő osztály felelős a feltöltött anyagok minősítéséért és értékeléséért. Az osztály biztosítja a felhasználói visszajelzéseket a tananyagok minőségéről és segít azok fejlesztésében.</p>
+
+        <ol className="pl-[5.3rem] pt-6 list-disc list-inside">
+
+          <p className="font-bold">Együttműködők:</p>
+
+          <li><span className="font-bold">Felhasználó:</span> A felhasználók visszajelzései alapján történik az értékelés.</li>
+          <li><span className="font-bold">Készítő:</span> Az értékelések segítik a készítőket a tartalom fejlesztésében.</li>
+
+        </ol>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Attribútumok:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Típus</th>
+      <th className="border border-black p-4 text-lg">Leírás</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">értékelőId</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">Egyedi azonosító, amely az értékelőt azonosítja</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">név</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">Az értékelő neve</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">email</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">Az értékelő email címe</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">értékelések</td>
+      <td className="border border-black p-4 text-lg">List{'<Értékelés>'}, float</td>
+      <td className="border border-black p-4 text-lg">Az értékelő által adott értékelések listája</td>
+    </tr>
+  </tbody>
+</table>
+
+<p className="pl-[5.3rem] pt-6 font-bold">Operációk:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Argumentumok</th>
+      <th className="border border-black p-4 text-lg">Működése</th>
+      <th className="border border-black p-4 text-lg">Feladata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">értékelésAdása()</td>
+      <td className="border border-black p-4 text-lg">tananyag, értékelés</td>
+      <td className="border border-black p-4 text-lg">A tananyag értékelése egy adott skálán</td>
+      <td className="border border-black p-4 text-lg">A tananyag minősítésének hozzájárulása</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">kommentálás()</td>
+      <td className="border border-black p-4 text-lg">tananyag, komment</td>
+      <td className="border border-black p-4 text-lg">A felhasználói visszajelzés rögzítése az anyagról</td>
+      <td className="border border-black p-4 text-lg">A felhasználók véleményeinek begyűjtése</td>
+    </tr>
+  </tbody>
+</table>
+
+        <h2 id="tananyagosztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.4. Tananyag osztály</h2>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Felelőssége, feladata:</p>
+        <p className="pl-[5.3rem]">A Tananyag osztály felelős a különböző oktatási anyagok tárolásáért és kezeléséért. Itt találhatóak a kurzusok, feladatok, tesztek, amelyeket a felhasználók elérhetnek.</p>
+
+        <ol className="pl-[5.3rem] pt-6 list-disc list-inside">
+
+          <p className="font-bold">Együttműködők:</p>
+
+          <li><span className="font-bold">Készítő:</span> A készítők töltik fel a tananyagokat.</li>
+          <li><span className="font-bold">Felhasználó:</span> A felhasználók hozzáférnek és véleményezik a tananyagot.</li>
+
+        </ol>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Attribútumok:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Típus</th>
+      <th className="border border-black p-4 text-lg">Leírás</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">tananyagId</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">A tananyag egyedi azonosítója</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">cím</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">A tananyag neve vagy címe</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">leírás</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">A tananyag rövid leírása</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">típus</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">A tananyag típusa (pl. videó, szöveg, feladat)</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">feltöltőId</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">A készítő azonosítója</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">értékelés</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">A tananyag átlagos értékelése</td>
+    </tr>
+  </tbody>
+</table>
+
+<p className="pl-[5.3rem] pt-6 font-bold">Operációk:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Argumentumok</th>
+      <th className="border border-black p-4 text-lg">Működése</th>
+      <th className="border border-black p-4 text-lg">Feladata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">feltölt()</td>
+      <td className="border border-black p-4 text-lg">tananyag, cím, típus, leírás</td>
+      <td className="border border-black p-4 text-lg">A tananyag feltöltése a rendszerbe</td>
+      <td className="border border-black p-4 text-lg">Új tananyag feltöltése</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">frissít()</td>
+      <td className="border border-black p-4 text-lg">tananyag, cím, típus, leírás</td>
+      <td className="border border-black p-4 text-lg">A tananyag információinak vagy adatainak a frissítése</td>
+      <td className="border border-black p-4 text-lg">A tananyag adatainak módosítása</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">töröl()</td>
+      <td className="border border-black p-4 text-lg">tananyag</td>
+      <td className="border border-black p-4 text-lg">A tananyag törlése</td>
+      <td className="border border-black p-4 text-lg">A tananyag elérhetetlenné tevése, törlése a rendszerből</td>
+    </tr>
+  </tbody>
+</table>
+
+        <h2 id="jelvenyosztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.5. Jelvény osztály</h2>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Felelőssége, feladata:</p>
+        <p className="pl-[5.3rem]">A Jelvény osztály felelős a felhasználók számára elérhető különböző jelvények kezeléséért, amelyeket a rendszerben végzett tevékenységekhez rendelnek.</p>
+
+        <ol className="pl-[5.3rem] pt-6 list-disc list-inside">
+
+          <p className="font-bold">Együttműködők:</p>
+
+          <li><span className="font-bold">Felhasználó:</span> A felhasználók szerezhetik meg a jelvényeket.</li>
+          <li><span className="font-bold">XP:</span> A jelvények XP-t adhatnak, vagy XP-hez kapcsolódhatnak.</li>
+
+        </ol>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Attribútumok:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Típus</th>
+      <th className="border border-black p-4 text-lg">Leírás</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">jelvényId</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">A jelvény egyedi azonosítója</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">név</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">A jelvény neve</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">leírás</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">A jelvény leírása</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">szint</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">A jelvény szintje (pl. kezdő, haladó)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p className="pl-[5.3rem] pt-6 font-bold">Operációk:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Argumentumok</th>
+      <th className="border border-black p-4 text-lg">Működése</th>
+      <th className="border border-black p-4 text-lg">Feladata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">szerez()</td>
+      <td className="border border-black p-4 text-lg">felhasználó, XP</td>
+      <td className="border border-black p-4 text-lg">A felhasználó elnyeri a jelvényt</td>
+      <td className="border border-black p-4 text-lg">A jelvények kiosztása a megfelelő tevékenységekért</td>
+    </tr>
+  </tbody>
+</table>
+
+        <h2 id="xposztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.6. XP osztály</h2>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Felelőssége, feladata:</p>
+        <p className="pl-[5.3rem]">Az XP osztály a felhasználók által szerzett tapasztalati pontokat (XP) kezeli, amelyeket a különböző tevékenységekhez kapcsolnak.</p>
+
+        <ol className="pl-[5.3rem] pt-6 list-disc list-inside">
+
+          <p className="font-bold">Együttműködők:</p>
+
+          <li><span className="font-bold">Felhasználó:</span> A felhasználók gyűjthetnek XP-t.</li>
+          <li><span className="font-bold">Jelvény:</span> XP-t lehet gyűjteni a jelvények elnyeréséhez.</li>
+
+        </ol>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Attribútumok:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Típus</th>
+      <th className="border border-black p-4 text-lg">Leírás</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">xpId</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">Az XP rekord egyedi azonosítója</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">felhasználóId</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">A felhasználó azonosítója, aki az XP-t gyűjtötte</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">pontszám</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">Az összegyűjtött XP pontok száma</td>
+    </tr>
+  </tbody>
+</table>
+
+<p className="pl-[5.3rem] pt-6 font-bold">Operációk:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Argumentumok</th>
+      <th className="border border-black p-4 text-lg">Működése</th>
+      <th className="border border-black p-4 text-lg">Feladata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">pontszámNövel()</td>
+      <td className="border border-black p-4 text-lg">felhasználó, pontszám, XP</td>
+      <td className="border border-black p-4 text-lg">A felhasználó XP-jének növelése egy bizonyos pontszámmal</td>
+      <td className="border border-black p-4 text-lg">Az XP gyűjtésének kezelése és nyilvántartása</td>
+    </tr>
+  </tbody>
+</table>
+
+
+        
+        <h2 id="achiosztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.7. Achievement osztály</h2>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Felelőssége, feladata:</p>
+        <p className="pl-[5.3rem]">Az Achievement osztály célja, hogy különleges elismeréseket nyújtson a felhasználók számára a rendszerben végzett bizonyos tevékenységekért, mint például meghatározott számú tananyag elvégzése vagy egy adott szint elérése. Az Achievement-ek motivációként szolgálnak a felhasználók számára.</p>
+
+        <ol className="pl-[5.3rem] pt-6 list-disc list-inside">
+
+          <p className="font-bold">Együttműködők:</p>
+
+          <li><span className="font-bold">Felhasználó:</span> A felhasználók szerezhetik meg az Achievement-eket.</li>
+          <li><span className="font-bold">Jelvény:</span> Az Achievement-ek gyakran kapcsolódhatnak jelvényekhez is, és további elismerésként szolgálnak.</li>
+          <li><span className="font-bold">XP:</span> Egyes Achievement-ek XP-t is adhatnak jutalomként.</li>
+
+        </ol>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Attribútumok:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Típus</th>
+      <th className="border border-black p-4 text-lg">Leírás</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">achievementId</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">Az Achievement egyedi azonosítója      </td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">név</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">Az Achievement neve      </td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">leírás</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">Az Achievement leírása (pl. "Teljesíts 10 tanfolyamot!")      </td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">követelmény</td>
+      <td className="border border-black p-4 text-lg">String</td>
+      <td className="border border-black p-4 text-lg">Az Achievement megszerzéséhez szükséges feltételek      </td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">jutalomXP</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">Az Achievement megszerzéséért járó XP mennyisége      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p className="pl-[5.3rem] pt-6 font-bold">Operációk:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Argumentumok</th>
+      <th className="border border-black p-4 text-lg">Működése</th>
+      <th className="border border-black p-4 text-lg">Feladata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">kiad()</td>
+      <td className="border border-black p-4 text-lg">felhasználó</td>
+      <td className="border border-black p-4 text-lg">Az Achievement kiosztása egy adott felhasználónak</td>
+      <td className="border border-black p-4 text-lg">Biztosítja, hogy a felhasználó megkapja az elért Achievement-et      </td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">ellenőriz()</td>
+      <td className="border border-black p-4 text-lg">felhasználó</td>
+      <td className="border border-black p-4 text-lg">Ellenőrzi, hogy a felhasználó teljesítette-e az Achievement feltételeit</td>
+      <td className="border border-black p-4 text-lg">Nyomon követi a felhasználói tevékenységeket a feltételek alapján      </td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">jutalmaz()</td>
+      <td className="border border-black p-4 text-lg">felhasználó, XP</td>
+      <td className="border border-black p-4 text-lg">Az Achievement-ért járó XP hozzáadása a felhasználóhoz</td>
+      <td className="border border-black p-4 text-lg">A megszerzett Achievement-hez kapcsolódó XP kiosztása      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="ranglistaosztaly" className="ml-8 text-xl font-bold text-sky-600 pt-6">3.6.8. Ranglista osztály</h2>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Felelőssége, feladata:</p>
+        <p className="pl-[5.3rem]">A Ranglista osztály felelős a legjobb felhasználók rangsorolásáért, a legmagasabb XP-vel rendelkező felhasználók megjelenítéséért.</p>
+
+        <ol className="pl-[5.3rem] pt-6 list-disc list-inside">
+
+          <p className="font-bold">Együttműködők:</p>
+
+          <li><span className="font-bold">Felhasználó:</span> A ranglistán szereplő felhasználókat tartalmazza.</li>
+
+        </ol>
+
+        <p className="pl-[5.3rem] pt-6 font-bold">Attribútumok:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Típus</th>
+      <th className="border border-black p-4 text-lg">Leírás</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">ranglistaId</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">A ranglista egyedi azonosítója</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">felhasználóId</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">A felhasználó, aki szerepel a ranglistán</td>
+    </tr>
+    <tr>
+      <td className="border border-black p-4 text-lg">XP</td>
+      <td className="border border-black p-4 text-lg">Integer</td>
+      <td className="border border-black p-4 text-lg">A felhasználó összegyűjtött XP pontszáma</td>
+    </tr>
+  </tbody>
+</table>
+
+<p className="pl-[5.3rem] pt-6 font-bold">Operációk:</p>
+
+        <table className="ml-[5.3rem] border-collapse">
+  <thead>
+    <tr>
+      <th className="border border-black p-4 text-lg">Név</th>
+      <th className="border border-black p-4 text-lg">Argumentumok</th>
+      <th className="border border-black p-4 text-lg">Működése</th>
+      <th className="border border-black p-4 text-lg">Feladata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-black p-4 text-lg">frissít()</td>
+      <td className="border border-black p-4 text-lg">felhasználó, XP</td>
+      <td className="border border-black p-4 text-lg">A ranglista frissítése a felhasználók XP-je alapján</td>
+      <td className="border border-black p-4 text-lg">A ranglista naprakéssé tétele</td>
+    </tr>
+  </tbody>
+</table>
 
     </>
   );
